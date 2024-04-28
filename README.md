@@ -14,7 +14,7 @@
 
 4. Vscode [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-> Mantenha todo o seu projeto no WSL para evitar lentidão
+> Mantenha todo o seu projeto no WSL para evitar lentidão.
 
 ## Linux
 
@@ -28,14 +28,14 @@ ________________________________________________________________________________
 
 # Iniciando o Setup
 
-1-Crie o arquivo com o nome do projeto
+1-Crie o arquivo com o nome do projeto.
 
 ```
 mkdir meu-app-rails
 cd meu-app-rails
 ```
 
-2-Baixe | abra no vscode
+2-Baixe | Abra no vscode.
 
 ```
 code .
@@ -47,19 +47,19 @@ code .
 
 
 
-4-Com a extensão no Vscode aperte o botão **F1** do seu teclado, um menu de opções do dev container aparecerá, escolha a opção **"Dev containers: Open Folder in Container..."**
+4-Com a extensão no Vscode aperte o botão **F1** do seu teclado, um menu de opções do dev container aparecerá, escolha a opção **"Dev containers: Open Folder in Container..."**.
 
 ![Imagem com o menu do dev containers contendo a opção dev containers: open folder in container](Captura%20de%20tela%202024-04-26%20141203.png)
 
 
 
-5-Confirme o arquivo que vc abrirá no container
+5-Confirme o arquivo que você abrirá no container.
 
 ![menu de confirmação com o botão ok](Captura%20de%20tela%202024-04-26%20141420.png)
 
 
 
-6-No próximo menu escreva “ruby” a extensão te retorna algumas opções de containers com Ruby, escolha opcao Ruby on Rails & Postgres e em seguida escolha a versão do Ruby (recomendado sempre escolher a primeira/default)
+6-No próximo menu escreva “ruby” a extensão te retorna algumas opções de containers com Ruby, escolha opção Ruby on Rails & Postgres e em seguida escolha a versão do Ruby (recomendado sempre escolher a primeira/default).
 
 ![Imagem com o menu do dev containers contendo a opção Ruby on Rails e Postgresql](Captura%20de%20tela%202024-04-26%20141550.png)
 
@@ -73,9 +73,9 @@ code .
 ![Imagem mostrando a feature Github-cli](Captura%20de%20tela%202024-04-26%20142255.png)
 
 
-Depois dessa etapa a extensão vai mostrar alguns prompts de versões das features, apenas escolha default e latest e prossiga com a instalação
+Depois dessa etapa a extensão vai mostrar alguns prompts de versões das features, apenas escolha default ou latest e prossiga com a instalação.
 
-> Redis escolha a versão 7
+> Redis escolha a versão 7.
 
 Após isso um novo container será criado.
 
@@ -83,7 +83,7 @@ Após isso um novo container será criado.
 
 Isto pode demorar um **bom** tempo, o Docker vai baixar as imagens e fazer todo o setup ,então não estranhe se demorar muito.
 
-8-Após o término do setup é recomendado testar se tudo está funcionando corretamente
+8-Após o término do setup é recomendado testar se tudo está funcionando corretamente.
 
 ```
 ruby -v
@@ -143,13 +143,13 @@ rails s
 
 ## Extensões do Vscode
 
-Para adicionar extensões e temas ao vscode pesquise pela extensão que deseja acionar e na pagina da extensão va no símbolo de engrenagem e escolha a opção **"Add to devcontainer.json"** e faça o Rebuild do container.Agora todas as vezes que iniciar o container tera sempre as extensões que você escolheu.
+Para adicionar extensões e temas ao vscode pesquise pela extensão que deseja acionar e na pagina da extensão vá no símbolo de engrenagem e escolha a opção **"Add to devcontainer.json"** e faça o Rebuild do container.Agora todas as vezes que iniciar o container tera sempre as extensões que você escolheu.
 
 
 
 ## Gems e comandos adicionais
 
-As vezes precisamos de Gems no ambiente de desenvolvimento ,mas não da aplicação para isso existe uma maneira fácil de fazer usando containers.
+Às vezes precisamos de Gems no ambiente de desenvolvimento ,mas não da aplicação para isso existe uma maneira fácil de fazer usando containers.
 
 1. Vá em devcontainers.json
 
