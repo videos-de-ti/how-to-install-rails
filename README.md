@@ -10,8 +10,6 @@
 
 ![Imagem da pagina settings do socker desktop mostrando a aba resources onde Enable integration esta ativado junto a distro Ubunto ](Captura%20de%20tela%202024-04-26%20134649.png)
 
-
-
 4. Vscode [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 > Mantenha todo o seu projeto no WSL para evitar lentidão.
@@ -45,24 +43,17 @@ code .
 
 ![image do marketplace do vscode mostrando a pesquisa dev containers com o resultado sendo a extesão da microsoft ](Captura%20de%20tela%202024-04-28%20141152.png)
 
-
-
 4-Com a extensão no Vscode aperte o botão **F1** do seu teclado, um menu de opções do dev container aparecerá, escolha a opção **"Dev containers: Open Folder in Container..."**.
 
 ![Imagem com o menu do dev containers contendo a opção dev containers: open folder in container](Captura%20de%20tela%202024-04-26%20141203.png)
-
-
 
 5-Confirme o arquivo que você abrirá no container.
 
 ![menu de confirmação com o botão ok](Captura%20de%20tela%202024-04-26%20141420.png)
 
-
-
 6-No próximo menu escreva “ruby” a extensão te retorna algumas opções de containers com Ruby, escolha opção Ruby on Rails & Postgres e em seguida escolha a versão do Ruby (recomendado sempre escolher a primeira/default).
 
 ![Imagem com o menu do dev containers contendo a opção Ruby on Rails e Postgresql](Captura%20de%20tela%202024-04-26%20141550.png)
-
 
 7-Agora no menu de features vamos escolher algumas ferramentas importantes para o desenvolvimento. Nesse menu vamos procurar por Redis Server,Node e github-cli.
 
@@ -71,7 +62,6 @@ code .
 ![Imagem mostrando a feature Node.js via nvm,yan e pnpm](Captura%20de%20tela%202024-04-26%20142150.png)
 
 ![Imagem mostrando a feature Github-cli](Captura%20de%20tela%202024-04-26%20142255.png)
-
 
 Depois dessa etapa a extensão vai mostrar alguns prompts de versões das features, apenas escolha default ou latest e prossiga com a instalação.
 
@@ -105,8 +95,6 @@ redis-cli ping
 
 Se os comandos tiverem retorno o seu setup já está pronto para o desenvolvimento.
 
-
-
 9-Inicie um novo projeto com:
 
 ```
@@ -114,8 +102,6 @@ rails new . -d postgresql
 ```
 
 > Usar o “.” após o “new” faz com que o seu projeto seja criado na pasta atual e com o nome da mesma.
-
-
 
 10-Após isso adicione o host, user e password no config/database.yml.
 
@@ -141,11 +127,31 @@ test:
 rails s
 ```
 
+## Software de Terceiros
+
+Algumas ferramentas do Rails ,como **Active Storage** , nescessitam que software de terceiros sejam instalados para o seu funciomamento. Ah forma correta de instalar essas ferrramentas é o usando o DockerFile localizado dentro da pasta .devcontainer.
+
+Dentro do arquivo descomente a linhas:
+
+```
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
+```
+
+Exemplo, linha modificada para instalar o postgresql-client ,libvips e imagemagick:
+
+```
+# [Optional] Uncomment this section to install additional OS packages.
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl libvips imagemagick postgresql-client && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+```
+
 ## Extensões do Vscode
 
 Para adicionar extensões e temas ao vscode pesquise pela extensão que deseja acionar e na pagina da extensão vá no símbolo de engrenagem e escolha a opção **"Add to devcontainer.json"** e faça o Rebuild do container.Agora todas as vezes que iniciar o container tera sempre as extensões que você escolheu.
-
-
 
 ## Gems e comandos adicionais
 
@@ -164,7 +170,5 @@ Exemplo:
 ```
 
 > Recomendo adicionar sempre o comando budle em todos os containers para que o container já faça o bundle install automaticamente ao iniciar.
-
-
 
 Fim
